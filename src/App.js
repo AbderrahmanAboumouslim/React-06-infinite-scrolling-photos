@@ -47,6 +47,7 @@ function App() {
 
   useEffect(() => {
     fetchPhotos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showPage]);
 
   useEffect(() => {
@@ -60,6 +61,7 @@ function App() {
     };
     window.addEventListener("scroll", event);
     return () => window.removeEventListener("scroll", event);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const submitSearch = (e) => {
     e.preventDefault();

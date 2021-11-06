@@ -11,14 +11,14 @@ const Photo = ({
 }) => {
   return (
     <article className="photo">
-      <img src={regular} />
+      <img src={regular} alt={name} />
       <div className="photo-info">
         <div>
           <h4>{name}</h4>
           <p>{likes}likes</p>
         </div>
         <a href={portfolio_url}>
-          <img src={medium} className="user-img" />
+          <img src={medium} className="user-img" alt={name} />
         </a>
       </div>
     </article>
