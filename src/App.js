@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import Photo from "./Photo";
-
-const API_KEY = `?client_id=${process.env.REACT_APP_API_KEY}`;
+// ${process.env.REACT_APP_API_KEY}
+const API_KEY = `?client_id=BDUtSTi0742IKr0LnLDL2yul16GV1AwQ8_FHmXXeT10`;
 const mainUrl = `https://api.unsplash.com/photos/`;
 const searchUrl = `https://api.unsplash.com/search/photos/`;
 
@@ -29,13 +29,14 @@ function App() {
       const res = await fetch(url);
       const data = await res.json();
       console.log(data);
-      setPhotos(() => {
+      setPhotos((oldPhotos) => {
+        console.log(oldPhotos);
         if (query && showPage === 1) {
           return data.results;
         } else if (query) {
-          return [...photos, ...data.results];
+          return [...oldPhotos, ...data.results];
         } else {
-          return [...photos, ...data];
+          return [...oldPhotos, ...data];
         }
       });
 
