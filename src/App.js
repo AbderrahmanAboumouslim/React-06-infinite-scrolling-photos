@@ -9,7 +9,7 @@ const searchUrl = `https://api.unsplash.com/search/photos/`;
 function App() {
   const [loading, setLoading] = useState(false);
   const [photos, setPhotos] = useState([]);
-  const [showPage, setShowPage] = useState(0);
+  const [showPage, setShowPage] = useState(1);
   const [query, setQuery] = useState("");
 
   const fetchPhotos = async () => {
@@ -65,7 +65,7 @@ function App() {
   }, []);
   const submitSearch = (e) => {
     e.preventDefault();
-    setShowPage(1);
+    setShowPage(2);
   };
 
   return (
