@@ -29,14 +29,13 @@ function App() {
       const res = await fetch(url);
       const data = await res.json();
       console.log(data);
-      setPhotos((oldPhotos) => {
-        console.log(oldPhotos);
+      setPhotos(() => {
         if (query && showPage === 1) {
           return data.results;
         } else if (query) {
-          return [...oldPhotos, ...data[results]];
+          return [...photos, ...data.results];
         } else {
-          return [...oldPhotos, ...data];
+          return [...photos, ...data];
         }
       });
 
