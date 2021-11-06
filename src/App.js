@@ -28,7 +28,7 @@ function App() {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      // console.log(data);
+      console.log(data);
       setPhotos((oldPhotos) => {
         if (query && showPage === 1) {
           return data.results;
@@ -86,9 +86,9 @@ function App() {
       </section>
       <section className="photos">
         <div className="photos-center">
-          {photos.map((photo) => {
+          {photos.map((photo, index) => {
             // console.log(photo);
-            return <Photo key={photo.id} {...photo} />;
+            return <Photo key={index} {...photo} />;
           })}
         </div>
         {loading && <h2 className="loading">loading...</h2>}
