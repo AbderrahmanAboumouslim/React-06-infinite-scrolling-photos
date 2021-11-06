@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import Photo from "./Photo";
-import api_key from "./apikey";
-const API_KEY = `?client_id=${api_key}`;
+const API_KEY = `?client_id=BDUtSTi0742IKr0LnLDL2yul16GV1AwQ8_FHmXXeT10`;
 const mainUrl = `https://api.unsplash.com/photos/`;
 const searchUrl = `https://api.unsplash.com/search/photos/`;
 
@@ -87,12 +86,12 @@ function App() {
         </form>
       </section>
       <section className="photos">
-        <article className="photos-center">
+        <div className="photos-center">
           {photos.map((photo, index) => {
             // console.log(photo);
             return <Photo key={photo.id} {...photo} />;
           })}
-        </article>
+        </div>
         {loading && <h2 className="loading">loading...</h2>}
       </section>
     </main>
