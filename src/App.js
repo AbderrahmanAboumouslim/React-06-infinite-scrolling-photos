@@ -87,12 +87,12 @@ function App() {
         </form>
       </section>
       <section className="photos">
-        <div className="photos-center">
+        <article className="photos-center">
           {photos.map((photo, index) => {
             // console.log(photo);
             return <Photo key={photo.id} {...photo} />;
           })}
-        </div>
+        </article>
         {loading && <h2 className="loading">loading...</h2>}
       </section>
     </main>
