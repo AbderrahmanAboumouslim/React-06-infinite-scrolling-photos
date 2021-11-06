@@ -41,7 +41,7 @@ function App() {
 
       setLoading(false);
     } catch (err) {
-      console.error(err);
+      console.log(err);
     }
   };
 
@@ -88,7 +88,7 @@ function App() {
         <div className="photos-center">
           {photos.map((photo, index) => {
             // console.log(photo);
-            return <Photo key={index} {...photo} />;
+            return <Photo key={photo.id} {...photo} />;
           })}
         </div>
         {loading && <h2 className="loading">loading...</h2>}
